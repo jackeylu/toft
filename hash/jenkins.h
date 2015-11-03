@@ -19,6 +19,8 @@ namespace toft {
 //  for details
 uint32_t JenkinsOneAtATimeHash(const std::string& str);
 uint32_t JenkinsOneAtATimeHash(const char *key, size_t len);
+uint64_t JenkinsOneAtATimeHash(uint64_t key);
+uint64_t JenkinsOneAtATimeInverseHash(uint64_t key);
 
 }  // namespace toft
 
