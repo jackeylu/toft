@@ -17,4 +17,14 @@ TEST(HashUnittest, Fingerprint) {
     uint64_t hash2 = StringToFingerprint64(str);
     EXPECT_EQ(hash_value, hash2);
 }
+
+TEST(HashUnittest, JenkinsOneAtATimeHashUint64) {
+	uint64_t key = 123456789;
+	uint64_t hash_value = JenkinsOneAtATimeHash(key);
+	uint64_t inverse = JenkinsOneAtATimeInverseHash(hash);
+	uint64_t expected = 16581954974024456952;
+	EXPECT_EQ(hash_value, expected);
+	EXPECT_EQ(key, inverse);
+}
+
 }  // namespace toft
